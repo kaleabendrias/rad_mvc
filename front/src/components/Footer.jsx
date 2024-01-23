@@ -27,7 +27,7 @@ const Footer = () => {
                   width={40}
                   className="bg-white"
                 />
-                <span className="ml-4 text-lg font-bold">Kal</span>
+                <span className="ml-4 text-lg font-bold">RAD</span>
               </div>
             </a>
           </div>

@@ -5,11 +5,11 @@ import MVC from "../assets/Model2.webp";
 import { motion } from "framer-motion";
 
 const Protected = () => {
-  const imageStyle = "border rounded object-fit w-full h-96"; // Adjust the height value
+  const imageStyle = "border rounded object-cover w-full h-full"; // Adjust the height value
 
   return (
     <div className="w-full text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black p-8">
-      <div className="flex flex-wrap md:flex-nowrap justify-center">
+      <div className="flex flex-col md:flex-row flex-wrap md:flex-nowrap justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -67,35 +67,41 @@ const Protected = () => {
         </motion.div>
       </div>
 
-      <div className="pb-6 flex items-center mt-8">
+      <div className="pb-6 flex flex-wrap items-center justify-center mt-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-[70%] md:w-[30%] m-4"
+          className="flex-none w-full md:w-1/2 p-4"
         >
-          <p className="font-bold text-xl mb-2 text-center">Model</p>
-          <img src={model} className={imageStyle} alt="Model" />
+          <div className="container mx-auto h-64">
+            <p className="font-bold text-xl mb-2 text-center">Model</p>
+            <img src={model} className={imageStyle} alt="Model" />
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-[70%] md:w-[30%] m-4"
+          className="flex-none w-full md:w-1/2 p-4"
         >
-          <p className="font-bold text-xl mb-2 text-center">View</p>
-          <img src={view} className={imageStyle} alt="View" />
+          <div className="container mx-auto h-64">
+            <p className="font-bold text-xl mb-2 text-center">View</p>
+            <img src={view} className={imageStyle} alt="View" />
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-[70%] md:w-[30%] m-4"
+          className="flex-none w-full md:w-1/2 p-4 m-4"
         >
-          <p className="font-bold text-xl mb-2 text-center">Controller</p>
-          <img src={controller} className={imageStyle} alt="Controller" />
+          <div className="container mx-auto h-64">
+            <p className="font-bold text-xl mb-2 text-center">Controller</p>
+            <img src={controller} className={imageStyle} alt="Controller" />
+          </div>
         </motion.div>
       </div>
     </div>

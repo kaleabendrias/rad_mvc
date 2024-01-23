@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import checkAuth from "./auth.helper";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/DP.svg";
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,7 +45,10 @@ const NavBar = () => {
 
   return (
     <div className="flex justify-between items-center bg-slate-900 text-white p-5 shadow-lg">
-      <Link to="/">Logo</Link>
+      <Link to="/" className="flex justify-center items-center">
+        <img src={logo} alt="logo" className="w-5 h-5 bg-white mr-1" />
+        <p>Logo</p>
+      </Link>
       <div>
         <Link to="/" className="text-sm font-semibold hover:underline mr-2">
           Home

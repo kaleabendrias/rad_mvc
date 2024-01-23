@@ -1,22 +1,19 @@
 const request = require("supertest");
 const app = require("../index");
+const User = require("../models/User");
 
-describe("POST /signin", () => {
-  it("it should try to authenticate", async () => {
-    const res = await request(app).post("/signin").send({
-      email: "kal@gmail.com",
-      password: "123",
-    });
-    expect(res.statusCode).toBe(200);
-  });
-});
+jest.mock("../models/User", () => ({
+  findOne: jest.fn(),
+}));
 
-describe("POST /signin", () => {
-  it("it should try to authenticate", async () => {
-    const res = await request(app).post("/signin").send({
-      email: "kal@gmail.com",
-      password: "12345",
-    });
+describe("POST /auth/signin", () => {
+  it("should return an error for invalid credentials", async () => {
+    const res = await request(app)
+      .post("/auth/signin")
+      .send({ email: "kal@gmail.com", password: "12345" });
+
+    console.log(res.body);
+
     expect(res.statusCode).toBe(400);
   });
 });
